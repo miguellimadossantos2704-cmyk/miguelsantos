@@ -28,7 +28,7 @@
 
         /* CONTAINER CENTRALIZADO */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -41,15 +41,26 @@
             align-items: center;
         }
         .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+        
+        .contact-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .contact-link:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
 
         /* SEÇÃO PRINCIPAL (HERO) */
         .hero {
             text-align: center;
-            padding: 120px 0 80px;
+            padding: 100px 0 80px;
         }
         
         h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -91,7 +102,7 @@
         }
 
         /* GRID DE PROJETOS */
-        .projects-section { margin-top: 100px; margin-bottom: 100px; }
+        .projects-section { margin-top: 80px; margin-bottom: 100px; }
         .section-label {
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -117,6 +128,9 @@
             transition: 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         .card:hover {
@@ -124,7 +138,7 @@
             transform: translateY(-5px);
         }
 
-        .card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
         .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; }
         
         .card-link {
@@ -133,7 +147,9 @@
             font-weight: 600;
             border-bottom: 1px solid var(--accent);
             padding-bottom: 2px;
+            align-self: flex-start;
         }
+        .card-link:hover { color: var(--accent); }
 
         /* FOOTER */
         footer {
@@ -156,14 +172,14 @@
     <div class="container">
         <header>
             <div class="logo">Miguel Santos.</div>
-            <a href="https://ig.me/m/miguellimasts_" style="color: #fff; text-decoration: none; font-size: 0.9rem;">Contato</a>
+            <a href="https://www.instagram.com/miguellimasts_/" target="_blank" class="contact-link">Instagram</a>
         </header>
 
         <section class="hero">
             <h1>Web Design <br> High-End.</h1>
             <p class="subtitle">Desenvolvo experiências digitais que posicionam sua marca no topo. Landing Pages e Sites de alta performance.</p>
             
-            <a href="https://instagram.com/miguellimasts_" class="btn btn-primary">Ver perfil no Instagram</a>
+            <a href="https://www.instagram.com/miguellimasts_/" target="_blank" class="btn btn-primary">Entrar em contato</a>
         </section>
 
         <section class="projects-section">
@@ -171,14 +187,26 @@
             
             <div class="grid">
                 <div class="card">
-                    <h3>TitanTrainer V39</h3>
-                    <p>Web App completo de fitness com sistema de lógica complexa e design focado em conversão de vendas.</p>
+                    <div>
+                        <h3>🔥 TitanTrainer V39</h3>
+                        <p>Web App completo de fitness com sistema de lógica complexa e design focado em conversão de vendas.</p>
+                    </div>
                     <a href="https://bit.ly/protocolo-titan" target="_blank" class="card-link">Acessar Projeto</a>
                 </div>
 
                 <div class="card">
-                    <h3>Miguel Santos | Portfólio</h3>
-                    <p>Este site. Interface minimalista desenvolvida com as melhores práticas de SEO e performance web.</p>
+                    <div>
+                        <h3>🚀 Landing Page Fitness</h3>
+                        <p>Página de alta conversão desenvolvida para captação de leads e apresentação de produto digital.</p>
+                    </div>
+                    <a href="https://miguelsantos.tiiny.site" target="_blank" class="card-link">Acessar Projeto</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>💻 Este Portfólio</h3>
+                        <p>Interface minimalista "High-End" desenvolvida com as melhores práticas de SEO e performance.</p>
+                    </div>
                     <a href="#" class="card-link">Projeto Atual</a>
                 </div>
             </div>
