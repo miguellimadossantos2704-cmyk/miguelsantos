@@ -33,14 +33,46 @@
             padding: 0 20px;
         }
 
-        /* HEADER / NAV */
+        /* HEADER / NAV COM FOTO */
         header {
             padding: 30px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+        
+        /* Estilo do Logo + Foto */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espaço entre a foto e o nome */
+        }
+
+        .avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%; /* Deixa a foto redonda */
+            object-fit: cover;
+            /* Borda fina com o gradiente do tema */
+            border: 2px solid transparent;
+            background-image: linear-gradient(var(--bg-color), var(--bg-color)), var(--gradient);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+        .logo-text span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 0;
+        }
         
         .contact-link {
             color: #fff;
@@ -164,6 +196,7 @@
         @media (max-width: 600px) {
             h1 { font-size: 2.8rem; }
             .container { padding: 0 25px; }
+            .logo-text span { display: none; } /* Simplifica no mobile */
         }
     </style>
 </head>
@@ -171,15 +204,22 @@
 
     <div class="container">
         <header>
-            <div class="logo">Miguel Santos.</div>
-            <a href="https://www.instagram.com/miguelllimasts_/" target="_blank" class="contact-link">Instagram</a>
+            <div class="logo-container">
+                <img src="foto-miguel.png" alt="Foto de Miguel Santos" class="avatar">
+                <div class="logo-text">
+                    Miguel Santos.
+                    <span>Web Developer</span>
+                </div>
+            </div>
+
+            <a href="https://www.instagram.com/miguellimasts_/" target="_blank" class="contact-link">Instagram</a>
         </header>
 
         <section class="hero">
             <h1>Web Design <br> High-End.</h1>
             <p class="subtitle">Desenvolvo experiências digitais que posicionam sua marca no topo. Landing Pages e Sites de alta performance.</p>
             
-            <a href="https://www.instagram.com/miguelllimasts_/" target="_blank" class="btn btn-primary">Entrar em contato</a>
+            <a href="https://www.instagram.com/miguellimasts_/" target="_blank" class="btn btn-primary">Entrar em contato</a>
         </section>
 
         <section class="projects-section">
