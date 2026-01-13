@@ -3,98 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miguel Santos | Desenvolvedor Web</title>
+    <title>Miguel Santos | Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilo Dark Mode Moderno */
+        /* RESET E VARIÁVEIS - Estilo 'Corporate Clean' */
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #e2e8f0;
-            --accent-color: #38bdf8; /* Azul Neon */
+            --primary: #0f172a; /* Azul Quase Preto */
+            --accent: #2563eb; /* Azul Royal Profissional */
+            --bg: #f8fafc; /* Cinza Gelo (Não é branco puro, não cansa a vista) */
+            --white: #ffffff;
+            --text-gray: #64748b;
         }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
             line-height: 1.6;
         }
-        header {
-            text-align: center;
-            padding: 4rem 1rem;
-            background: linear-gradient(to bottom, #1e293b, #0f172a);
-        }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; }
-        h2 { color: var(--accent-color); font-weight: 300; }
-        
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        
-        /* Botão Principal */
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #0f172a;
-            padding: 12px 24px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            margin-top: 20px;
-            transition: transform 0.2s;
-        }
-        .btn:hover { transform: scale(1.05); background-color: #7dd3fc; }
 
-        /* Projetos */
-        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
-        .card {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #334155;
+        /* HEADER / NAVEGAÇÃO */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .card h3 { margin-top: 0; color: #fff; }
-        .tag {
-            background-color: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+        .logo { font-weight: 700; font-size: 1.2rem; color: var(--primary); letter-spacing: -0.5px; }
+        .nav-links a { text-decoration: none; color: var(--text-gray); margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* HERO SECTION (Topo) */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            background: linear-gradient(to right, #0f172a, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 40px; }
+        
+        .btn-main {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2); }
+
+        /* SEÇÃO PORTFÓLIO */
+        .portfolio-section {
+            padding: 80px 5%;
+            background-color: var(--white);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 { font-size: 2rem; margin-bottom: 10px; }
+        .section-title p { color: var(--text-gray); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+            position: relative;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+        }
+        
+        .card-body { padding: 30px; }
+        .tag { 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            font-weight: 700; 
+            color: var(--accent); 
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .project-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .project-card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
+        .link-project {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .link-project:hover { color: var(--accent); }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #e2e8f0;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade para celular */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplificando pro mobile */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Miguel Santos</h1>
-        <h2>Desenvolvedor Front-end & Web Designer</h2>
-        <p>Transformo ideias em sites profissionais de alta performance.</p>
-        <a href="https://wa.me/SEUNUMERO" class="btn">Solicitar Orçamento</a>
-    </header>
+    <nav>
+        <div class="logo">Miguel Santos.</div>
+        <div class="nav-links">
+            <a href="#portfolio">Projetos</a>
+            <a href="#servicos">Serviços</a>
+            <a href="https://wa.me/5561999999999">Contato</a>
+        </div>
+    </nav>
 
-    <div class="container">
-        <h2 style="border-bottom: 2px solid var(--accent-color); display: inline-block;">Meus Projetos</h2>
-        
-        <div class="projects">
-            <div class="card">
-                <h3>🏋️‍♂️ TitanTrainer V39</h3>
-                <span class="tag">Web App Fitness</span>
-                <p>Plataforma completa de treino e nutrição. Sistema de cálculo de dieta e periodização de treinos.</p>
-                <a href="https://bit.ly/protocolo-titan" target="_blank" style="color: var(--accent-color);">Ver Projeto &rarr;</a>
-            </div>
+    <section class="hero">
+        <h1>Desenvolvimento Web <br> de Alta Performance.</h1>
+        <p>Especialista em criar Landing Pages que convertem visitantes em clientes e Sistemas Web robustos.</p>
+        <a href="https://wa.me/5561999999999" class="btn-main">Solicitar Orçamento no WhatsApp</a>
+    </section>
 
-          <div class="card">
-                <h3>⛪ Paróquia N. Sra. do Rosário</h3>
-                <span class="tag">Sistema de Gestão</span>
-                <p>Solução para organização de escalas e servidores do altar. Automação de processos internos.</p>
-                <a href="#" style="color: var(--accent-color);">Em desenvolvimento</a>
-            </div>
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-title">
+            <h2>Projetos Selecionados</h2>
+            <p>Trabalhos recentes desenvolvidos com foco em resultado.</p>
         </div>
 
-        <div style="text-align: center; margin-top: 50px; padding: 20px;">
-            <p>Precisa de um site como estes?</p>
-            <a href="https://wa.me/SEUNUMERO" class="btn">Me chame no WhatsApp</a>
+        <div class="grid">
+            <div class="project-card">
+                <div class="card-body">
+                    <span class="tag">Web App & Vendas</span>
+                    <h3>TitanTrainer V39</h3>
+                    <p>Plataforma completa de fitness. Inclui página de vendas de alta conversão e sistema lógico para cálculo de dietas e treinos personalizados.</p>
+                    <a href="https://bit.ly/protocolo-titan" target="_blank" class="link-project">Ver Projeto Online →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-body">
+                    <span class="tag">Portfólio Profissional</span>
+                    <h3>Miguel Santos | Dev</h3>
+                    <p>Este site que você está navegando agora. Design minimalista, focado em performance, SEO e captação de leads qualificados.</p>
+                    <a href="#" class="link-project">Você está nele agora</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Miguel Santos. Todos os direitos reservados.</p>
+        <p>Brasília - DF</p>
+    </footer>
 
 </body>
 </html>
