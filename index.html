@@ -8,11 +8,11 @@
     <style>
         /* CONFIGURAÇÕES VISUAIS PREMIUM */
         :root {
-            --bg-color: #030712; /* Preto Azulado Profundo */
-            --card-bg: #111827; /* Cinza Carvão */
-            --text-main: #f9fafb; /* Branco Gelo */
-            --text-muted: #9ca3af; /* Cinza Suave */
-            --accent: #6366f1; /* Indigo Moderno */
+            --bg-color: #030712;
+            --card-bg: #111827;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --accent: #6366f1;
             --gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         }
 
@@ -26,14 +26,12 @@
             overflow-x: hidden;
         }
 
-        /* CONTAINER CENTRALIZADO */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* HEADER / NAV COM FOTO */
         header {
             padding: 30px 0;
             display: flex;
@@ -41,19 +39,17 @@
             align-items: center;
         }
         
-        /* Estilo do Logo + Foto */
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px; /* Espaço entre a foto e o nome */
+            gap: 15px;
         }
 
         .avatar {
             width: 60px;
             height: 60px;
-            border-radius: 50%; /* Deixa a foto redonda */
+            border-radius: 50%;
             object-fit: cover;
-            /* Borda fina com o gradiente do tema */
             border: 2px solid transparent;
             background-image: linear-gradient(var(--bg-color), var(--bg-color)), var(--gradient);
             background-origin: border-box;
@@ -85,7 +81,6 @@
         }
         .contact-link:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
 
-        /* SEÇÃO PRINCIPAL (HERO) */
         .hero {
             text-align: center;
             padding: 100px 0 80px;
@@ -97,7 +92,6 @@
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -2px;
-            /* Efeito de Texto Gradiente */
             background: linear-gradient(to right, #fff, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -111,7 +105,6 @@
             font-weight: 300;
         }
 
-        /* BOTÕES */
         .btn {
             display: inline-block;
             padding: 16px 40px;
@@ -133,7 +126,6 @@
             background: #fff;
         }
 
-        /* GRID DE PROJETOS */
         .projects-section { margin-top: 80px; margin-bottom: 100px; }
         .section-label {
             text-transform: uppercase;
@@ -183,7 +175,6 @@
         }
         .card-link:hover { color: var(--accent); }
 
-        /* FOOTER */
         footer {
             text-align: center;
             padding: 50px 0;
@@ -192,11 +183,10 @@
             border-top: 1px solid #1f2937;
         }
 
-        /* RESPONSIVO */
         @media (max-width: 600px) {
             h1 { font-size: 2.8rem; }
             .container { padding: 0 25px; }
-            .logo-text span { display: none; } /* Simplifica no mobile */
+            .logo-text span { display: none; }
         }
     </style>
 </head>
@@ -205,7 +195,7 @@
     <div class="container">
         <header>
             <div class="logo-container">
-                <img src="0b815772-7305-425b-a464-a1d3f621b3e7.jfif" alt="Foto de Miguel Santos" class="avatar">
+                <img src="foto.jpg" alt="Foto de Miguel Santos" class="avatar">
                 <div class="logo-text">
                     Miguel Santos.
                     <span>Web Developer</span>
