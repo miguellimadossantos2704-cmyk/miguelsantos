@@ -6,13 +6,13 @@
     <title>Miguel Santos | Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* CONFIGURAÇÕES VISUAIS PREMIUM */
+        /* === DESIGN HIGH-END DARK === */
         :root {
-            --bg-color: #030712;
+            --bg-color: #030712; /* Fundo super escuro premium */
             --card-bg: #111827;
             --text-main: #f9fafb;
             --text-muted: #9ca3af;
-            --accent: #6366f1;
+            --accent: #6366f1; /* Roxo azulado moderno */
             --gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         }
 
@@ -32,6 +32,7 @@
             padding: 0 20px;
         }
 
+        /* --- CABEÇALHO COM FOTO --- */
         header {
             padding: 30px 0;
             display: flex;
@@ -45,12 +46,14 @@
             gap: 15px;
         }
 
+        /* Estilo da Foto Redonda */
         .avatar {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid transparent;
+            /* Borda gradiente chique */
             background-image: linear-gradient(var(--bg-color), var(--bg-color)), var(--gradient);
             background-origin: border-box;
             background-clip: content-box, border-box;
@@ -70,6 +73,7 @@
             letter-spacing: 0;
         }
         
+        /* Botão do Instagram no menu */
         .contact-link {
             color: #fff;
             text-decoration: none;
@@ -81,6 +85,7 @@
         }
         .contact-link:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
 
+        /* --- ÁREA PRINCIPAL (HERO) --- */
         .hero {
             text-align: center;
             padding: 100px 0 80px;
@@ -105,6 +110,7 @@
             font-weight: 300;
         }
 
+        /* Botão Principal */
         .btn {
             display: inline-block;
             padding: 16px 40px;
@@ -126,6 +132,7 @@
             background: #fff;
         }
 
+        /* --- PORTFÓLIO --- */
         .projects-section { margin-top: 80px; margin-bottom: 100px; }
         .section-label {
             text-transform: uppercase;
@@ -175,6 +182,7 @@
         }
         .card-link:hover { color: var(--accent); }
 
+        /* --- RODAPÉ --- */
         footer {
             text-align: center;
             padding: 50px 0;
@@ -183,6 +191,7 @@
             border-top: 1px solid #1f2937;
         }
 
+        /* Responsivo para celular */
         @media (max-width: 600px) {
             h1 { font-size: 2.8rem; }
             .container { padding: 0 25px; }
@@ -195,7 +204,7 @@
     <div class="container">
         <header>
             <div class="logo-container">
-                <img src="foto.jpg" alt="Foto de Miguel Santos" class="avatar">
+                <img src="foto.png" alt="Miguel Santos" class="avatar">
                 <div class="logo-text">
                     Miguel Santos.
                     <span>Web Developer</span>
